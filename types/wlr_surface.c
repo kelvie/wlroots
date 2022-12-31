@@ -608,6 +608,12 @@ static const struct wl_surface_interface surface_implementation = {
 	.damage_buffer = surface_handle_damage_buffer
 };
 
+bool wlr_surface_check_resource(struct wl_resource *resource)
+{
+    return wl_resource_instance_of(resource, &wl_surface_interface,
+		&surface_implementation);
+}
+
 struct wlr_surface *wlr_surface_from_resource(struct wl_resource *resource) {
 	assert(wl_resource_instance_of(resource, &wl_surface_interface,
 		&surface_implementation));

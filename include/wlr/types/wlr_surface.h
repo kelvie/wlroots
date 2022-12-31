@@ -317,4 +317,10 @@ uint32_t wlr_surface_lock_pending(struct wlr_surface *surface);
  */
 void wlr_surface_unlock_cached(struct wlr_surface *surface, uint32_t seq);
 
+
+/**
+ * Returns whether the resource is a surface
+ */
+bool wlr_surface_check_resource(struct wl_resource *resource);
+
 #endif
